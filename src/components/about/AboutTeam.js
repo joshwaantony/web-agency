@@ -1,3 +1,7 @@
+
+
+
+
 "use client";
 
 export default function AboutTeam() {
@@ -20,48 +24,69 @@ export default function AboutTeam() {
   ];
 
   return (
-    <section className="py-24 px-8 bg-[#f1f5f9] border-y border-[#e2e8f0]">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 
+    px-4 sm:px-6 md:px-8 
+    bg-[#f1f5f9] border-y border-[#e2e8f0]">
       
       <div className="max-w-7xl mx-auto">
         
-        {/* ✅ FIXED HEADING (LEFT ALIGNED) */}
-        <div className="mb-12 max-w-2xl">
+        {/* HEADING */}
+        <div className="mb-8 sm:mb-10 md:mb-12 max-w-xl sm:max-w-2xl text-center md:text-left">
           
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-[#0f172a] mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl 
+          font-headline font-bold text-[#0f172a] mb-3 md:mb-4">
             Leadership Team
           </h2>
 
-          <p className="text-[#64748b] text-sm md:text-base leading-relaxed">
+          <p className="text-[#64748b] 
+          text-sm sm:text-base 
+          leading-relaxed">
             Led by industry veterans committed to pushing the boundaries of what's possible in the digital realm.
           </p>
 
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+        gap-6 sm:gap-8 md:gap-10">
           
           {team.map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl border border-[#e2e8f0] overflow-hidden group hover:shadow-md transition"
+              className="bg-white 
+              rounded-lg md:rounded-xl 
+              border border-[#e2e8f0] 
+              overflow-hidden 
+              group transition 
+              hover:shadow-md"
             >
               
               {/* IMAGE */}
-              <img
-                src={member.img}
-                alt={member.name}
-                className="w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0 transition duration-500"
-              />
+              <div className="overflow-hidden">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full aspect-[3/4] object-cover 
+                  grayscale group-hover:grayscale-0 
+                  group-hover:scale-[1.03] 
+                  transition duration-500"
+                />
+              </div>
 
               {/* CONTENT */}
-              <div className="p-5">
-                <h3 className="text-sm font-semibold text-[#0f172a]">
+              <div className="p-4 sm:p-5 md:p-6 text-center md:text-left">
+                
+                <h3 className="text-sm sm:text-base md:text-lg 
+                font-semibold text-[#0f172a]">
                   {member.name}
                 </h3>
 
-                <p className="text-[#0050cc] text-xs mt-1">
+                <p className="text-[#0050cc] 
+                text-xs sm:text-sm 
+                mt-1">
                   {member.role}
                 </p>
+
               </div>
 
             </div>
